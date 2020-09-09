@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -lmaxFva
+ls -lmaXPva
