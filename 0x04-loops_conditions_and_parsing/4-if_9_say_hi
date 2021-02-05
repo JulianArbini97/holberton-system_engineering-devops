@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Printing 10 times with while
-i=1
+i=0
 while [ $i -lt 10 ]
 do
     if [ $i = 9 ]
