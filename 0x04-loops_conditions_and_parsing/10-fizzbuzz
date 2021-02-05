@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Numbers from 1 to 100
-for ((i = 0; i <= 100; i++))
+i="0"
+for i in {1..100}
 do
     if [[ $((i % 5)) = 0 && $((i % 3)) = 0 ]]
     then
