@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 # Process and PID file
-betty="/var/run/holbertonscript.pid"
+corto="/var/run/holbertonscript.pid"
 echo $$ > /var/run/holbertonscript.pid
-    trap 'echo "I hate the kill command"; rm -rf $betty; exit 0' SIGTERM
+    trap 'echo "I hate the kill command"; rm -rf $corto; exit 0' SIGTERM
     trap 'echo "Y U no love me?!"' SIGINT
-    trap 'rm -rf $betty; exit 0' SIGQUIT
+    trap 'rm -rf $corto; exit 0' SIGQUIT
 while true; do
     echo "To infinity and beyond"
     sleep 2
