@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# OSI is an abstract model to describe layered communication and network design
+netstat -lp
