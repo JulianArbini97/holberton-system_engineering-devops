@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# IDK
+nc -l 98
