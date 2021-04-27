@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 # Comment
-pkill -f apache2
-chmod 644 /etc/nginx/nginx.conf
-sed -i "s/8080/80/g" /etc/nginx/sites-available/default
-sudo service nginx stop
-sudo -u nginx nginx
-sudo service nginx start
+sudo pkill -o apache2
+chmod 744 /etc/nginx/nginx.conf
+sudo sed -i '3i\\n user nginx;' /etc/nginx/nginx.conf
+sudo sed -i "s/80/8080/g" /etc/nginx/sites-available/default
+su nginx -c 'service nginx restart'
