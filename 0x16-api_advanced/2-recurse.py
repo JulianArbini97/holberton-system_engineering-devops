@@ -10,10 +10,10 @@ def recurse(subreddit, hot_list=[], next_page=''):
     req = requests.get(page, headers={"User-Agent": "Mozilla/5.0"},
                        allow_redirects=False)
     json_req = req.json()
-    posts = json_req.get('data').get('children')
     if req.status_code != 200:
         return None
     else:
+        posts = json_req.get('data').get('children')
         for title in posts:
             hot_list.append(title.get('data').get('title'))
         next_page = json_req.get('data').get('after')
