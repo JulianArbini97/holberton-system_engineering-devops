@@ -7,7 +7,8 @@ def recurse(subreddit, hot_list=[], next_page=''):
     """ Function that returns list of all hot posts """
     page = 'https://www.reddit.com/r/{}/hot.json?after={}'.format(
         subreddit, next_page)
-    req = requests.get(page, headers={"User-Agent": "Mozilla/5.0"})
+    req = requests.get(page, headers={"User-Agent": "Mozilla/5.0"},
+                       allow_redirects=False)
     json_req = req.json()
     posts = json_req.get('data').get('children')
     if req.status_code != 200:
@@ -16,7 +17,6 @@ def recurse(subreddit, hot_list=[], next_page=''):
         for title in posts:
             hot_list.append(title.get('data').get('title'))
         next_page = json_req.get('data').get('after')
-        if next_page:
+        if next_page is not None:
             recurse(subreddit, hot_list, next_page)
         return hot_list
-    return hot_list
