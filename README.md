@@ -1,1 +1,1 @@
-# holberton-system_engineering-devops
+# All projects related to Bash, Linux.
